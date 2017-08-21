@@ -1,6 +1,8 @@
 package me::centravals;
 use strict;
 use argola;
+use chobak_json;
+use chobak_jsonf;
 
 my $contos;
 
@@ -21,6 +23,11 @@ sub optok {
   {
     die "\nUse -lm option to specify basename of longterm memory files.\n\n";
   }
+
+  $contos->{'memo'} = &chobak_jsonf::new($contos->{'longmem'},{
+    'rtyp' => 'HASH',
+  });
+  $contos->{'specf'} = &chobak_json::readf($contos->{'specfile'});
 }
 
 
