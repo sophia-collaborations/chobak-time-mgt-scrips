@@ -7,4 +7,6 @@ use me::centravals;
 
 &argola::runopts();
 
+&me::centravals::optok();
+
 
